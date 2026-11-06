@@ -1,0 +1,112 @@
+:root {
+    --text: #e6d2d2;
+    --muted: #a08f95;
+    --accent: #b9a8ff;
+    --panel: rgba(10, 8, 14, 0.8);
+    --font: "Courier New", ui-monospace, monospace;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font);
+    color: var(--text);
+    line-height: 1.7;
+    background: #0e0b12 url('img/creepywel.jpg') center / cover fixed no-repeat;
+}
+
+/* the content column */
+.page {
+    max-width: 700px;
+    margin: 3rem auto;
+    padding: 1.5rem 2rem;
+    background: rgb(114, 32, 32);
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--muted);
+    margin: 0.75rem 0 1rem;
+}
+
+.crumbs { color: var(--muted); }
+
+/* nav: [[ about ]] */
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+    margin-bottom: 2rem;
+}
+nav a::before { content: "[[ "; color: var(--muted); }
+nav a::after  { content: " ]]"; color: var(--muted); }
+nav a[aria-current="page"] { text-decoration: underline; }
+
+/* content */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+main p { margin-bottom: 1rem; }
+
+figure { margin: 1.5rem 0; }
+figure img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+figcaption {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-top: 0.4rem;
+}
+
+.contact { margin-top: 1.5rem; }
+
+footer {
+    margin-top: 2rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 88x31 buttons */
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 1rem;
+    justify-content: center;
+}
+.buttons img, .btn88 {
+    width: 88px;
+    height: 31px;
+    display: block;
+    image-rendering: pixelated;
+}
+.btn88 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font: bold 11px/1 monospace;
+    text-decoration: none;
+    border: 2px outset #ddd;
+}
+.btn88.anime   { background: linear-gradient(90deg, #ff9ac8, #9a8cff); color: #fff; }
+.btn88.anilist { background: #02a9ff; color: #fff; }
+
+@media (max-width: 480px) {
+    .page { margin: 0; padding: 1rem; }
+}
